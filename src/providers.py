@@ -41,7 +41,7 @@ def get_embedding_model() -> OpenAIModel:
 
     # For embeddings, use the same provider configuration
     provider = OpenAIProvider(
-        base_url=settings.llm_base_url, api_key=settings.llm_api_key
+        base_url=settings.embedding_base_url, api_key=settings.embedding_api_key
     )
 
     return OpenAIModel(settings.embedding_model, provider=provider)

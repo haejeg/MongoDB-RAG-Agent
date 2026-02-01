@@ -118,7 +118,7 @@ class DocumentIngestionPipeline:
             )
 
         except (ConnectionFailure, ServerSelectionTimeoutError) as e:
-            logger.exception("mongodb_connection_failed", error=str(e))
+            logger.exception(f"mongodb_connection_failed: {e}")
             raise
 
         self._initialized = True
